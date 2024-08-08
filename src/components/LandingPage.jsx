@@ -63,7 +63,7 @@ function LandingPage() {
             type="email"
             name="email"
             id="email"
-            placeholder="http://127.0.0.1:5000/username"
+            placeholder="https://linktrebackend.vercel.app/username"
             onChange={handleChange}
           />
         </div>
