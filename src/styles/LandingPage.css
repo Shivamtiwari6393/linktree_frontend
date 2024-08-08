@@ -1,0 +1,118 @@
+.landing-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+}
+
+.landing-container .overlay {
+  background-color: rgba(11, 114, 16, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  max-width: 600px;
+  margin: 0 0px;
+}
+
+.landing-container h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.landing-container p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.landing-container .button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.landing-container .button:hover {
+  background-color: #0056b3;
+}
+
+.yourlinks input{
+
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+  margin: 10px;
+  width: 60%;
+  text-align: center;
+
+}
+
+#getbutton{
+
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background-color: #8d33b6;
+  box-shadow: 0px 3px 2px grey;
+  transition: background-color 0.3s;
+
+}
+
+#getbutton:hover{
+  background-color: #4c4c4c;
+
+  box-shadow: 0px 1px 1px grey;
+
+
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .landing-container .overlay {
+    padding: 30px;
+  }
+
+  .landing-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing-container p {
+    font-size: 1rem;
+  }
+
+  .landing-container .button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-container .overlay {
+    padding: 20px;
+  }
+
+  .landing-container h1 {
+    font-size: 2rem;
+  }
+
+  .landing-container p {
+    font-size: 0.9rem;
+  }
+
+  .landing-container .button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .yourlinks input{
+    width: 90%;
+    
+  }
+}
