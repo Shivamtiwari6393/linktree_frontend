@@ -16,7 +16,9 @@ function LandingPage() {
 
   //------------ fetching links------------
 
-  const fetchLinks = async () => {
+  const fetchLinks = async (e) => {
+    e.preventDefault();
+
     setLoading(true);
     try {
       const response = await fetch(url, {
@@ -25,19 +27,24 @@ function LandingPage() {
 
       const links = await response.json();
 
+      if (response.status == 404) {
+        throw new Error("Url not Found");
+      }
+
       if (response.ok) {
         navigate(`/YourLinks`, { state: { links } });
       } else {
         throw new Error(links);
       }
     } catch (error) {
+      console.log(error);
+
       setError(error.message);
       console.log(error);
     } finally {
       setLoading(false);
     }
   };
-
 
   //------------- navigate to sign in component-------
 
@@ -58,19 +65,22 @@ function LandingPage() {
           Get Started
         </button>
 
-        <div className="yourlinks">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="https://linktrebackend.vercel.app/username"
-            onChange={handleChange}
-          />
-        </div>
-        <button id="getbutton" onClick={fetchLinks}>
-          Get Links
-        </button>
-        {error && <p className="error-message">{error}</p>}
+        <form onSubmit={fetchLinks}>
+          <div className="yourlinks">
+            <input
+              type="url"
+              name="email"
+              id="email"
+              placeholder="https://linktrebackend.vercel.app/username"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <button type="submit" id="getbutton">
+            Get Links
+          </button>
+          {error && <p className="error-message">{error}</p>}
+        </form>
       </div>
     </div>
   );
