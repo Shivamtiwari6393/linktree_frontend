@@ -73,7 +73,7 @@
 
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
   .landing-container .overlay {
     padding: 30px;

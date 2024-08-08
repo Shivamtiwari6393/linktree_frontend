@@ -14,33 +14,18 @@ function LandingPage() {
     setUrl(e.target.value);
   };
 
-  //------------ fetching links------------
+  //------------- handle form submit-------
 
-  const fetchLinks = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     setLoading(true);
     try {
-      const response = await fetch(url, {
-        method: "post",
-      });
-
-      const links = await response.json();
-
-      if (response.status == 404) {
-        throw new Error("Url not Found");
-      }
-
-      if (response.ok) {
-        navigate(`/YourLinks`, { state: { links } });
-      } else {
-        throw new Error(links);
-      }
+      const username = url.split("/").pop();
+      navigate(`/mytree/${username}`);
     } catch (error) {
       console.log(error);
-
-      setError(error.message);
-      console.log(error);
+      setError("Invalid URL");
     } finally {
       setLoading(false);
     }
@@ -65,12 +50,12 @@ function LandingPage() {
           Get Started
         </button>
 
-        <form onSubmit={fetchLinks}>
+        <form onSubmit={handleSubmit}>
           <div className="yourlinks">
             <input
               type="url"
-              name="email"
-              id="email"
+              name="url"
+              id="url"
               placeholder="https://linktrebackend.vercel.app/username"
               onChange={handleChange}
               required
