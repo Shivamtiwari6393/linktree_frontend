@@ -70,12 +70,12 @@ body{
   font-size: 1rem;
 }
 
-.signin-container a {
+.signin-container span {
   color: #007bff;
   text-decoration: none;
 }
 
-.signin-container a:hover {
+.signin-container span:hover {
   text-decoration: underline;
 }
 

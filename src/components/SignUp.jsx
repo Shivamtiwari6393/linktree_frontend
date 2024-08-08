@@ -47,6 +47,10 @@ function SignUp() {
     }
   };
 
+  const goSignIn = () => {
+    navigate("/signIn");
+  };
+
   return (
     <div className="signup-container">
       {loading && <Loading />}
@@ -78,7 +82,7 @@ function SignUp() {
         </button>
         {error && <p className="error-message">{error}</p>}
         <p>
-          Already have an account? <a href="/signin">Sign In</a>
+          Already have an account? <span onClick={goSignIn}>Sign In</span>
         </p>
       </form>
     </div>

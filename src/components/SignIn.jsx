@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/SignIn.css";
 import Loading from "./Loading";
 
+
+
 function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,6 +12,7 @@ function SignIn() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
 
   //------------------ handle sign in --------------------
 
@@ -40,6 +43,11 @@ function SignIn() {
       setLoading(false);
     }
   };
+  
+  const goSignup = () => {
+    navigate("/signup");
+  };
+
 
   return (
     <div className="signin-container">
@@ -65,7 +73,7 @@ function SignIn() {
         </button>
         {error && <p className="error-message">{error}</p>}
         <p>
-          Do not have an account? <a href="/signup">Sign Up</a>
+          Do not have an account?  <span onClick={goSignup}>Sign Up</span>
         </p>
       </form>
     </div>

@@ -68,12 +68,12 @@ p {
   font-size: 1rem;
 }
 
-a {
+span {
   color: #007bff;
   text-decoration: none;
 }
 
-a:hover {
+span:hover {
   text-decoration: underline;
 }
 
