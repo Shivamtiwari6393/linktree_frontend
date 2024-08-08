@@ -56,7 +56,7 @@ function LandingPage() {
               type="url"
               name="url"
               id="url"
-              placeholder="https://linktrebackend.vercel.app/username"
+              placeholder="https://trelinkk.vercel.app/mytree/username"
               onChange={handleChange}
               required
             />
