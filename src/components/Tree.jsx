@@ -11,14 +11,22 @@ function Tree() {
   const [loading, setLoading] = useState(false);
 
 
+// const reqUrl = "https://linktrebackend.vercel.app"
+const reqUrl =  "http://127.0.0.1:5000"
+
+
+  
+
   const navigate = useNavigate();
 
   useEffect(() => {
+
     // Fetch existing links from the server
     setLoading(true);
     const fetchLinks = async () => {
       const token = localStorage.getItem("token");
-      const response = await fetch("https://linktrebackend.vercel.app/", {
+
+      const response = await fetch(reqUrl, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -46,7 +54,7 @@ function Tree() {
 
     try {
       setLoading(true);
-      const response = await fetch("https://linktrebackend.vercel.app/", {
+      const response = await fetch(reqUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -77,7 +85,7 @@ function Tree() {
 
     const token = localStorage.getItem("token");
     setLoading(true);
-    const response = await fetch(`https://linktrebackend.vercel.app/delete/${id}`, {
+    const response = await fetch(`${reqUrl}/delete/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

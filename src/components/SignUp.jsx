@@ -12,6 +12,10 @@ function SignUp() {
 
   const navigate = useNavigate();
 
+  const reqUrl = "http://127.0.0.1:5000"
+  // const reqUrl = "https://linktrebackend.vercel.app"
+
+
   //----------------- handle sign up--------------
 
   const handleSignUp = async (e) => {
@@ -24,7 +28,7 @@ function SignUp() {
 
     try {
       setLoading(true);
-      const response = await fetch("https://linktrebackend.vercel.app/api/users/signup", {
+      const response = await fetch(`${reqUrl}/api/users/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
