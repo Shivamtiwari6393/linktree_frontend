@@ -41,7 +41,7 @@ function LandingPage() {
     <div className="landing-container">
       {loading && <Loading />}
       <div className="overlay">
-        <h1>Welcome to Linktree</h1>
+        <h1>Welcome to Trelinkk</h1>
         <p>Your one-stop solution to share all your links in one place.</p>
         <p>
           Create your personalized link collection and share it with the world.
