@@ -4,8 +4,8 @@ import "../styles/SignIn.css";
 import Loading from "./Loading";
 
 
-const reqUrl = "http://127.0.0.1:5000"
-// const reqUrl = "https://linktrebackend.vercel.app"
+// const reqUrl = "http://127.0.0.1:5000"
+const reqUrl = "https://linktrebackend.vercel.app"
 
 function SignIn() {
   const [email, setEmail] = useState("");

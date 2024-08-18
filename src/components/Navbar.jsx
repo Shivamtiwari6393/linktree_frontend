@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
+import tree from '../assets/tree.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
     <nav className="navbar">
  
         <Link to="/" className="navbar-logo">
-          <img src="tree.png" alt="tree_logo" />
+          <img src={tree} alt="tree_logo" />
         </Link>
         <div className={`burger-menu ${isMenuOpen ? 'active' : ''}`} onClick={handleMenuToggle}>
           <div></div>
