@@ -9,6 +9,7 @@ function LandingPage() {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  
 
   const handleChange = (e) => {
     setUrl(e.target.value);
@@ -40,7 +41,7 @@ function LandingPage() {
   return (
     <div className="landing-container">
       {loading && <Loading />}
-      <div className="overlay">
+      <div className="landing-page-content">
         <h1>Welcome to Trelinkk</h1>
         <p>Your one-stop solution to share all your links in one place.</p>
         <p>
@@ -56,7 +57,7 @@ function LandingPage() {
               type="url"
               name="url"
               id="url"
-              placeholder="https://trelinkk.vercel.app/mytree/username"
+              placeholder="https://trelinkk.vercel.app/username"
               onChange={handleChange}
               required
             />

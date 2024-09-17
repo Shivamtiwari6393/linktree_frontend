@@ -3,26 +3,23 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
-.landing-container .overlay {
+.landing-container .landing-page-content {
   background-color: rgba(11, 114, 16, 0.5);
   padding: 50px;
   border-radius: 10px;
   text-align: center;
   color: white;
-  max-width: 600px;
-  margin: 0 0px;
 }
 
-.landing-container h1 {
-  font-size: 3rem;
+.landing-container .landing-page-content h1 {
   margin-bottom: 20px;
 }
 
-.landing-container p {
-  font-size: 1.2rem;
+.landing-container .landing-page-content p {
+  font-size: larger;
   margin-bottom: 20px;
 }
 
@@ -44,7 +41,7 @@
 .yourlinks input{
 
   padding: 10px;
-  border-radius: 30px;
+  border-radius: 5px;
   border: none;
   margin: 10px;
   width: 60%;
@@ -56,18 +53,17 @@
 
   font-weight: bold;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
   color: #fff;
   background-color: #8d33b6;
   box-shadow: 0px 3px 2px grey;
-  transition: background-color 0.3s;
+  transition: 0.3s;
 
 }
 
 #getbutton:hover{
   background-color: #4c4c4c;
-
   box-shadow: 0px 1px 1px grey;
 
 
@@ -75,7 +71,7 @@
 
 
 @media (max-width: 768px) {
-  .landing-container .overlay {
+  .landing-container .landing-page-content {
     padding: 30px;
   }
 
@@ -89,12 +85,11 @@
 
   .landing-container .button {
     padding: 8px 16px;
-    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .landing-container .overlay {
+  .landing-container .landing-page-content {
     padding: 20px;
   }
 
@@ -103,12 +98,11 @@
   }
 
   .landing-container p {
-    font-size: 0.9rem;
+    font-size: small;
   }
 
   .landing-container .button {
     padding: 6px 12px;
-    font-size: 0.8rem;
   }
 
   .yourlinks input{

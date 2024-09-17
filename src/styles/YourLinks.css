@@ -8,7 +8,7 @@
   
   .yourlink-container h1 {
     background-color: #8957ad;
-    border-radius: 30px;
+    border-radius: 10px;
     font-size: 1.5rem;
     width: 90%;
     max-width: 700px;
@@ -36,13 +36,13 @@
   }
   
   .yourlink-container ul li:hover {
-    transform: scale(1.01);
+    background-color: rgb(213, 208, 246);
   }
   
   .yourlink-container ul li a {
     text-decoration: none;
     color: #007bff;
-    font-size: 1.2rem;
+    font-weight: bold;
     display: block;
     word-wrap: break-word;
   }

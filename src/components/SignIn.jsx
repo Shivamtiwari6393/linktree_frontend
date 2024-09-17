@@ -23,7 +23,7 @@ function SignIn() {
 
     try {
       setLoading(true);
-      const response = await fetch(`${reqUrl}/api/users/signin`, {
+      const response = await fetch(`${reqUrl}/api/user/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,9 +40,8 @@ function SignIn() {
       localStorage.setItem("token", data.token);
       navigate("/tree");
     } catch (error) {
+      setLoading(false)
       setError(error.message);
-    } finally {
-      setLoading(false);
     }
   };
   

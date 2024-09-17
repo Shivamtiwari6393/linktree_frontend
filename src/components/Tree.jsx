@@ -9,24 +9,18 @@ function Tree() {
   const [url, setUrl] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
-
-const reqUrl = "https://linktrebackend.vercel.app"
-// const reqUrl =  "http://127.0.0.1:5000"
-
-
-  
-
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const reqUrl = "https://linktrebackend.vercel.app"
+  // const reqUrl = "http://127.0.0.1:5000";
 
+  useEffect(() => {
     // Fetch existing links from the server
     setLoading(true);
     const fetchLinks = async () => {
       const token = localStorage.getItem("token");
 
-      const response = await fetch(reqUrl, {
+      const response = await fetch(`${reqUrl}/api/link`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,12 +31,10 @@ const reqUrl = "https://linktrebackend.vercel.app"
         navigate("/signin");
         return;
       }
-
       const data = await response.json();
       setLinks(data);
       setLoading(false);
     };
-
     fetchLinks();
   }, [navigate]);
 
@@ -54,7 +46,7 @@ const reqUrl = "https://linktrebackend.vercel.app"
 
     try {
       setLoading(true);
-      const response = await fetch(reqUrl, {
+      const response = await fetch(`${reqUrl}/api/link`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +65,7 @@ const reqUrl = "https://linktrebackend.vercel.app"
       setUrl("");
     } catch (error) {
       setError(error.message);
-    }finally{
+    } finally {
       setLoading(false);
     }
   };
@@ -81,11 +73,9 @@ const reqUrl = "https://linktrebackend.vercel.app"
   // ---------delete link-------------
 
   const handleDeleteLink = async (id) => {
-    console.log(id);
-
     const token = localStorage.getItem("token");
     setLoading(true);
-    const response = await fetch(`${reqUrl}/delete/${id}`, {
+    const response = await fetch(`${reqUrl}/api/link/delete/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,

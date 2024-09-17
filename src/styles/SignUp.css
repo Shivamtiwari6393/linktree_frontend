@@ -9,11 +9,12 @@
 .signup-form {
   background: #fff;
   padding: 40px;
-  border-radius: 30px;
+  border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 400px;
 }
@@ -21,8 +22,7 @@
 .signup-form h2 {
   text-align: center;
   background-color: #458ba2;
-  border-radius: 30px;
-  font-size: 1.5rem;
+  border-radius: 5px;
   color: white;
   padding: 5px;
   width: 100%;
@@ -33,12 +33,11 @@
 
 .signup-form input {
   box-shadow: 1px 1px 1px rgb(161, 161, 161);
-
   margin-bottom: 15px;
   padding: 10px;
   width: 90%;
   border: 1px solid #ddd;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 10px;
 }
 
@@ -48,7 +47,7 @@
   color: #fff;
   background-color: #007bff;
   border: none;
-  border-radius: 30px;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: 60%;
@@ -99,10 +98,5 @@ span:hover {
 
   .signup-form h2 {
     font-size: 1.3rem;
-  }
-
-  .button {
-    padding: 6px 12px;
-    font-size: 0.8rem;
   }
 }
