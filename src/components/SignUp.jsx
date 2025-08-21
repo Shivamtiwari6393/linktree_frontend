@@ -13,8 +13,7 @@ function SignUp() {
   const navigate = useNavigate();
 
   // const reqUrl = "http://127.0.0.1:5000"
-  const reqUrl = "https://linktrebackend.vercel.app"
-
+  const reqUrl = "https://linktrebackend.vercel.app";
 
   //----------------- handle sign up--------------
 
@@ -41,8 +40,6 @@ function SignUp() {
       if (!response.ok) {
         throw new Error(data.message);
       }
-
-      localStorage.setItem("token", data.token);
       navigate("/signIn");
     } catch (error) {
       setError(error.message);

@@ -31,7 +31,7 @@ const router = createBrowserRouter([
         element: <Tree />,
       },
       {
-        path: "/mytree/:username",
+        path: "/:username",
         element: <YourLinks />,
       }
 

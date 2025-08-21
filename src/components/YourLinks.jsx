@@ -8,24 +8,19 @@ function YourLink() {
   const { username } = useParams();
   const [links, setLinks] = useState(null);
   const [loading, setLoading] = useState(false);
-  
   const [error, setError] = useState("");
 
 
 // const reqUrl = "http://127.0.0.1:5000"
 const reqUrl = "https://linktrebackend.vercel.app"
 
-
-
-
   useEffect(() => {
-    console.log(username);
     setLoading(true);
 
     const fetchLinks = async () => {
       try {
         const response = await fetch(`${reqUrl}/${username}`, {
-          method: "post",
+          method: "GET",
         });
 
         const links = await response.json();
@@ -57,7 +52,6 @@ const reqUrl = "https://linktrebackend.vercel.app"
 
       {links ? (
         <>
-          {" "}
           <h1>Your Links</h1>
           <ul>
             {links.map((link) => (

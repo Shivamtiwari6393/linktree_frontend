@@ -6,7 +6,7 @@ import Loading from "./Loading";
 function LandingPage() {
   const navigate = useNavigate();
 
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState("https://trelinkk.vercel.app/username");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   
@@ -23,7 +23,7 @@ function LandingPage() {
     setLoading(true);
     try {
       const username = url.split("/").pop();
-      navigate(`/mytree/${username}`);
+      navigate(`/${username}`);
     } catch (error) {
       console.log(error);
       setError("Invalid URL");
@@ -60,6 +60,7 @@ function LandingPage() {
               placeholder="https://trelinkk.vercel.app/username"
               onChange={handleChange}
               required
+              value={url}
             />
           </div>
           <button type="submit" id="getbutton">
